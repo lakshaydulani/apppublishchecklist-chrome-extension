@@ -1,0 +1,22 @@
+{
+  "name": "Inject DOM",
+  "version": "1.0",
+  "description": "",
+  "manifest_version": 2,
+  "options_ui": {
+    // Required.
+    "page": "options.html",
+    // Recommended.
+    "chrome_style": true
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    //"open_in_tab": true
+  },
+  "permissions": [
+          "storage"
+        ],
+  "content_scripts": [ {
+    "js": ["myscript.js"],
+    "matches": [ "*://*.google.co.in/*" ]
+      }]
+}
