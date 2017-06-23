@@ -9,11 +9,10 @@ var taskList = [],
 
 
 chrome.storage.sync.get({
-	items: []
+	items: [{name:'APIs, etc pointed to production server'},{name:'Test cases were successful'}]
 }, function (data) {
 	console.log('data from chrome storage', data);
-	taskList = JSON.parse(data.items);
-	console.log('taskList', taskList);
+	taskList = data.items;
 
 
 updateListView();
@@ -89,7 +88,7 @@ function deleteThisTask(e) {
 function saveLocalList() {
 
 	chrome.storage.sync.set({
-		items: JSON.stringify(taskList)
+		items: taskList
 	}, function () {
 		
 	});

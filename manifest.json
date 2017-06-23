@@ -1,7 +1,7 @@
 {
-  "name": "Inject DOM",
+  "name": "App Publish Checklist",
   "version": "1.0",
-  "description": "",
+  "description": "Checklist before that crucial PUBLISH button to make sure you dont mess up the release!",
   "manifest_version": 2,
   "options_ui": {
     // Required.
@@ -13,10 +13,25 @@
     //"open_in_tab": true
   },
   "permissions": [
-          "storage"
-        ],
-  "content_scripts": [ {
-    "js": ["myscript.js"],
-    "matches": [ "*://*.play.google.com/*" ]
-      }]
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "myscript.js"
+      ],
+      "matches": [
+        "*://*.play.google.com/*"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
 }
