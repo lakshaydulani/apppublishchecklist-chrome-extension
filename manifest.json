@@ -17,6 +17,6 @@
         ],
   "content_scripts": [ {
     "js": ["myscript.js"],
-    "matches": [ "*://*.google.co.in/*" ]
+    "matches": [ "*://*.play.google.com/*" ]
       }]
 }
